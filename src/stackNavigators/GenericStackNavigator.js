@@ -7,6 +7,7 @@ const GenericStackNavigator = ({children, Navigator}) => {
   return (
     <Navigator
       screenOptions={{
+        safeAreaInsets: {top: 10, bottom: 10},
         headerTintColor: theme.colors.headerText,
         headerStyle: {
           backgroundColor: theme.colors.headerBackground,
