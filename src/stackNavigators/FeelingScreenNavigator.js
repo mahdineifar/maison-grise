@@ -2,18 +2,19 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Feelings from '../screens/Feelings';
 import constants from '../constants/constants';
+import GenericStackNavigator from './GenericStackNavigator';
 
 const Stack = createStackNavigator();
 
 const FeelingScreenNavigator = () => {
   return (
-    <Stack.Navigator>
+    <GenericStackNavigator Navigator={Stack.Navigator}>
       <Stack.Screen
         name="FeelingScreen"
         component={Feelings}
         options={{title: constants.feelingsHeaderTitle}}
       />
-    </Stack.Navigator>
+    </GenericStackNavigator>
   );
 };
 
