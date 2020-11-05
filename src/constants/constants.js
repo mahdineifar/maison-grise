@@ -1,5 +1,5 @@
 export default {
-  lastVideosTabTitle: 'Dernières vidéos',
+  lastVideosTabTitle: 'Accueil',
   lastVideosHeaderTitle: 'Dernières vidéos',
   feelingsTabTitle: 'Boîte des émotions',
   feelingsHeaderTitle: 'Boîte des émotions',
