@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {createContext} from 'react';
 import {Appearance} from 'react-native';
 import {DefaultTheme, DarkTheme} from '@react-navigation/native';
-import {BLACK_COLOR, DARK_COLOR, WHITE_COLOR} from '../constants/Colors';
+import {BLACK_COLOR, DARK_COLOR, WHITE_COLOR} from 'constants/Colors';
 
 export const ThemeContext = createContext(DefaultTheme);
 

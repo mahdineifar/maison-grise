@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {View} from 'react-native';
-import {ThemeContext} from '../utils/Themes';
-import DefaultText from '../components/shared/DefaultText';
+import {ThemeContext} from 'utils/Themes';
+import DefaultText from 'sharedComponents/DefaultText';
 
 const Members = () => {
   const {theme} = useContext(ThemeContext);

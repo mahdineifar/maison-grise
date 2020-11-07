@@ -1,9 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import axios from '../utils/Youtube';
+import React, {useContext, useEffect, useState} from 'react';
 import {DataProvider, LayoutProvider, RecyclerListView} from 'recyclerlistview';
-import Container from '../components/shared/Container';
-import VideoItem from '../components/VideoItem';
-import {screenWidth} from '../utils/ScreenUtils';
+import axios from 'utils/Youtube';
+import VideoItem from 'components/VideoItem';
+import Container from 'sharedComponents/Container';
+import DefaultText from 'sharedComponents/DefaultText';
+import {screenWidth} from 'utils/ScreenUtils';
+import {ThemeContext} from 'utils/Themes';
 
 const dataProvider = new DataProvider((r1, r2) => {
   return r1 !== r2;
@@ -19,6 +21,7 @@ const layoutProvider = new LayoutProvider(
 
 const LastVideos = () => {
   const [videos, setVideos] = useState(null);
+  const {changeTheme} = useContext(ThemeContext);
   useEffect(() => {
     Promise.all([
       axios.get('', {
@@ -61,7 +64,11 @@ const LastVideos = () => {
       </Container>
     );
   }
-  return null;
+  return (
+    <Container>
+      <DefaultText onPress={changeTheme}>Feelings Screen</DefaultText>
+    </Container>
+  );
 };
 
 export default LastVideos;

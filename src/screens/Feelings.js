@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import DefaultText from '../components/shared/DefaultText';
-import Container from '../components/shared/Container';
-import {ThemeContext} from '../utils/Themes';
+import DefaultText from 'sharedComponents/DefaultText';
+import Container from 'sharedComponents/Container';
+import {ThemeContext} from 'utils/Themes';
 
 const Feelings = () => {
   const {changeTheme} = useContext(ThemeContext);
