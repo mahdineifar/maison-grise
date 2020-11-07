@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import {ThemeContext} from '../utils/Themes';
-import {BLACK_COLOR, WHITE_COLOR} from '../constants/Colors';
+import {ThemeContext} from 'utils/Themes';
+import {BLACK_COLOR, WHITE_COLOR} from 'constants/Colors';
 
 const TabBarIcon = ({name}) => {
   const {theme} = useContext(ThemeContext);

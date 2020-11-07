@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Members from '../screens/Members';
-import constants from '../constants/constants';
+import Members from 'screens/Members';
+import constants from 'constants/constants';
 import GenericStackNavigator from './GenericStackNavigator';
 
 const Stack = createStackNavigator();

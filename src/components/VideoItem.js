@@ -2,8 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import 'moment/locale/fr';
 import {Image, Linking, Pressable} from 'react-native';
-import DefaultText from './shared/DefaultText';
-import {screenWidth} from '../utils/ScreenUtils';
+import DefaultText from 'components/shared/DefaultText';
+import {screenWidth} from 'utils/ScreenUtils';
 
 moment.locale('fr');
 

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import {ThemeContext} from '../utils/Themes';
-import {YELLOW_COLOR} from '../constants/Colors';
+import {ThemeContext} from 'utils/Themes';
+import {YELLOW_COLOR} from 'constants/Colors';
 
 const GenericStackNavigator = ({children, Navigator}) => {
   const {theme} = useContext(ThemeContext);

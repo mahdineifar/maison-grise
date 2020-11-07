@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {View} from 'react-native';
-import {ThemeContext} from '../../utils/Themes';
+import {ThemeContext} from 'utils/Themes';
 
 const Container = ({children}) => {
   const {theme} = useContext(ThemeContext);

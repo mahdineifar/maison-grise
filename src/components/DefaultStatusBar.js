@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
-import {DARK_COLOR} from '../constants/Colors';
+import {DARK_COLOR} from 'constants/Colors';
 
 const DefaultStatusBar = ({theme}) => {
   return (

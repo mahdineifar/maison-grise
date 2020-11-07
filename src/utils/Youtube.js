@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {MAX_RESULTS, NUMBER_OF_DAYS} from '../constants/YoutubeConstants';
+import {MAX_RESULTS, NUMBER_OF_DAYS} from 'constants/YoutubeConstants';
 
 const KEY = 'AIzaSyDZ7l00Vg1rERwiTIXVivkOU5hIPEJJw3g';
 
