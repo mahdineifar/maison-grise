@@ -2,8 +2,8 @@ import React, {useContext, useEffect, useState} from 'react';
 import {DataProvider, LayoutProvider, RecyclerListView} from 'recyclerlistview';
 import axios from 'utils/Youtube';
 import VideoItem from 'components/VideoItem';
-import Container from 'sharedComponents/Container';
-import DefaultText from 'sharedComponents/DefaultText';
+import Container from 'components/shared/Container';
+import DefaultText from 'components/shared/DefaultText';
 import {screenWidth} from 'utils/ScreenUtils';
 import {ThemeContext} from 'utils/Themes';
 
