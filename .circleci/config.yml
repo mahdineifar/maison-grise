@@ -7,8 +7,16 @@ jobs:
     steps:
       - checkout
       - run: npm i -g envinfo && envinfo
-      - run: yarn install
-      - run: cd android && chmod +x gradlew && ./gradlew assembleRelease
+      - run: npm install
+      - run: npm run test
+      - run: cd android && ./gradlew assembleRelease
+      - run:
+          name: Store apk
+          command: |
+            mkdir /tmp/artifacts;
+            cp app/build/outputs/release/app-release.apk /tmp/artifacts/maison-grise.apk
+      - store_artifacts:
+          path: /tmp/artifacts
 
 workflows:
   version: 2.1
