@@ -1,0 +1,17 @@
+version: 2.1
+jobs:
+  android:
+    working_directory: ~/repo
+    docker:
+      - image: reactnativecommunity/react-native-android
+    steps:
+      - checkout
+      - run: npm i -g envinfo && envinfo
+      - run: yarn install
+      - run: cd android && chmod +x gradlew && ./gradlew assembleRelease
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - android
