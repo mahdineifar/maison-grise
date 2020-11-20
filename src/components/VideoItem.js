@@ -9,7 +9,11 @@ moment.locale('fr');
 
 const VideoItem = ({video}) => {
   return (
-    <Pressable onPress={() => Linking.openURL('https://www.youtube.com/watch?v='+video.id)} style={{marginHorizontal: 5}}>
+    <Pressable
+      onPress={() =>
+        Linking.openURL(`https://www.youtube.com/watch?v=${video.id}`)
+      }
+      style={{marginHorizontal: 5}}>
       <Image
         source={{uri: video.thumbnails.high.url}}
         resizeMode="contain"

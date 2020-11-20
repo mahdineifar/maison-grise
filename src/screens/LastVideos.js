@@ -21,6 +21,7 @@ const layoutProvider = new LayoutProvider(
 
 const LastVideos = () => {
   const [videos, setVideos] = useState(null);
+  const [error, setError] = useState(null);
   const {changeTheme} = useContext(ThemeContext);
   useEffect(() => {
     Promise.all([
@@ -34,18 +35,22 @@ const LastVideos = () => {
           channelId: 'UCfMw_NLtTEur_Gz7kpwvQGA',
         },
       }),
-    ]).then((response) => {
-      const result = response
-        .reduce((acc, cur) => acc.concat(cur.data.items), [])
-        .map((r) => ({
-          ...r.snippet,
-          id: r.id.videoId,
-        }));
-      result.sort(
-        ({publishedAt: t1}, {publishedAt: t2}) => new Date(t2) - new Date(t1),
-      );
-      setVideos(dataProvider.cloneWithRows(result));
-    });
+    ])
+      .then((response) => {
+        const result = response
+          .reduce((acc, cur) => acc.concat(cur.data.items), [])
+          .map((r) => ({
+            ...r.snippet,
+            id: r.id.videoId,
+          }));
+        result.sort(
+          ({publishedAt: t1}, {publishedAt: t2}) => new Date(t2) - new Date(t1),
+        );
+        setVideos(dataProvider.cloneWithRows(result));
+      })
+      .catch((err) => {
+        setError(err);
+      });
   }, []);
 
   function rowRenderer(type, data) {
@@ -66,7 +71,7 @@ const LastVideos = () => {
   }
   return (
     <Container>
-      <DefaultText onPress={changeTheme}>Feelings Screen</DefaultText>
+      <DefaultText onPress={changeTheme}>Error</DefaultText>
     </Container>
   );
 };
