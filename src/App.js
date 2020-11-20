@@ -69,6 +69,7 @@ export default function App() {
               options={{
                 title: constants.lastVideosTabTitle,
                 tabBarIcon: () => <TabBarIcon name="home" />,
+                tabBarTestID: 'VideosTabTestId',
               }}
             />
             <Tab.Screen
@@ -77,6 +78,7 @@ export default function App() {
               options={{
                 title: constants.feelingsTabTitle,
                 tabBarIcon: () => <TabBarIcon name="heartbeat" />,
+                tabBarTestID: 'FeelingsTabTestId',
               }}
             />
             <Tab.Screen
@@ -85,6 +87,7 @@ export default function App() {
               options={{
                 title: constants.membersTabTitle,
                 tabBarIcon: () => <TabBarIcon name="users" />,
+                tabBarTestID: 'MembersTabTestId',
               }}
             />
           </Tab.Navigator>
