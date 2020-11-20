@@ -9,14 +9,9 @@ jobs:
       - run: npm i -g envinfo && envinfo
       - run: npm install
       - run: npm run test
-      - run: cd android && ./gradlew assembleRelease
-      - run:
-          name: Store apk
-          command: |
-            mkdir /tmp/artifacts;
-            cp app/build/outputs/release/app-release.apk /tmp/artifacts/maison-grise.apk
+      - run: cd android && ./gradlew clean && ./gradlew assembleRelease
       - store_artifacts:
-          path: /tmp/artifacts
+          path: android/app/build/outputs/apk/release
 
 workflows:
   version: 2.1
