@@ -35,5 +35,3 @@ workflows:
           filters:
             branches:
               only: master
-          requires:
-            - build
