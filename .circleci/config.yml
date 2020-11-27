@@ -24,12 +24,12 @@ workflows:
     jobs:
       - build
   generate_apk:
-    type: approval
-    filters:
-      branches:
-        only: master
     jobs:
-      - build
+      - build:
+          type: approval
+          filters:
+            branches:
+              only: master
       - android_delivery:
           requires:
             - build
