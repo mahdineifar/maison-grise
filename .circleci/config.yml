@@ -4,21 +4,21 @@ default_env: &default_env
     - image: reactnativecommunity/react-native-android
 
 build_steps: &build_steps
-  - checkout
-  - run: npm i -g envinfo && envinfo
-  - run: npm install
-  - run: npm run test
+  steps:
+    - checkout
+    - run: npm i -g envinfo && envinfo
+    - run: npm install
+    - run: npm run test
 
 version: 2.1
 jobs:
   build:
     <<: *default_env
-    steps:
-      <<: *build_steps
+    <<: *build_steps
   android_delivery:
     <<: *default_env
+    <<: *build_steps
     steps:
-      <<: *build_steps
       - run: cd android && ./gradlew clean && ./gradlew assembleRelease
       - store_artifacts:
           path: android/app/build/outputs/apk/release
