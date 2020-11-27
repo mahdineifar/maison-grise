@@ -33,8 +33,4 @@ workflows:
       - build
   generate_apk:
     jobs:
-      - android_delivery:
-          type: approval
-          filters:
-            branches:
-              only: master
+      - android_delivery
