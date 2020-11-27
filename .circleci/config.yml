@@ -25,6 +25,7 @@ workflows:
       - build
   generate_apk:
     jobs:
+      - build
       - android_delivery:
           type: approval
           requires:
