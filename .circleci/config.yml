@@ -17,8 +17,11 @@ jobs:
     <<: *build_steps
   android_delivery:
     <<: *default_env
-    <<: *build_steps
     steps:
+      - checkout
+      - run: npm i -g envinfo && envinfo
+      - run: npm install
+      - run: npm run test
       - run: cd android && ./gradlew clean && ./gradlew assembleRelease
       - store_artifacts:
           path: android/app/build/outputs/apk/release
