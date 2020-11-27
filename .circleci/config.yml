@@ -1,0 +1,35 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: reactnativecommunity/react-native-android
+    steps:
+      - checkout
+      - run: npm i -g envinfo && envinfo
+      - run: npm install
+      - run: npm run test
+  android_delivery:
+    working_directory: ~/repo
+    docker:
+      - image: reactnativecommunity/react-native-android
+    steps:
+      - run: cd android && ./gradlew clean && ./gradlew assembleRelease
+      - store_artifacts:
+          path: android/app/build/outputs/apk/release
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+  generate_apk:
+    jobs:
+      - build:
+          type: approval
+          filters:
+            branches:
+              only: master
+      - android_delivery:
+          requires:
+            - build
